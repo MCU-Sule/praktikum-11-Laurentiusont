@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Laurentius Gusti Ontoseno Panata Yudha-2172028">
+    <title>Soal 2</title>
+    <style>
+        body{
+            background-color: rgb(225,225,225);
+        }
+        #a {
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
+            margin-top: 300px;
+            border: 1px solid black;
+            background-color: rgb(238,238,238);
+            font-weight: bolder;
+            width: 300px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        table {
+            margin: auto;
+            margin-top: 300px;
+        }
+        #e,#f,#g {
+            border: 1px solid black;
+            margin-right: 30px;
+            width: 130px;
+            font-weight: bolder;
+            background-color: rgb(238,238,238);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        #i {
+            margin-right: 30px;
+            width: 130px;   
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body onkeydown="kursor()">
+    <div id="a">Press any key to get the keyCode</div>
+    <table id="b">
+        <tr>
+            <td><div id="i">event.key</div></td>
+            <td><div id="i">event.keyCode</div></td>
+            <td><div id="i">event.code</div></td>
+        </tr>
+        <tr>
+            <td><div id="e"></div></td>
+            <td><div id="f"></div></td>
+            <td><div id="g"></div></td>
+        </tr>
+    </table>
+  
+    <script>
+        $("#b").hide();
+        
+        function kursor(){
+            $("#a").hide();
+            $("#b").show();
+            document.querySelector("#e").innerHTML= event.key
+            document.querySelector("#f").innerHTML= event.keyCode
+            document.querySelector("#g").innerHTML= event.code
+
+        }
+       
+    </script>
+</body>
+</html>

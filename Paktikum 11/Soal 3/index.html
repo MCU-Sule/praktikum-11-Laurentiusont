@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Laurentius Gusti Ontoseno Panata Yudha-2172028">
+    <title>Soal 3</title>
+    <style>
+        table {
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 0cm;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(100,169,168);
+            background-color: rgb(241,255,255);
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 0cm;
+        }
+        div {
+            margin: auto;
+            width: 450px;
+        }
+        #tag {
+            width: 100%;
+            background-color: rgb(134,206,233);
+            text-align: center;
+        }
+        #button{
+            width: 100px;
+            margin-top: 30px;
+        }
+        button{
+            height: 40px;
+            background-color: rgb(253,157,120);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+function dragStart(event) {
+  event.dataTransfer.setData("img", event.target.id);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event,id) {
+  event.preventDefault();
+  let data = event.dataTransfer.getData("img");
+  if (id!=data){
+    alert ("Wrong block");
+  }
+  else {
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById(data).value="true";
+}
+let a1= document.querySelector("#dragtarget").value;
+let a2= document.querySelector("#dragtarget1").value;
+let a3= document.querySelector("#dragtarget2").value;
+let a4= document.querySelector("#dragtarget3").value;
+    if ((a1=="true") && (a2=="true") && (a3=="true") && (a4=="true")) {
+    alert ("You Win");
+}
+}
+    </script>
+    <table>
+        <tr>
+            <td id="a1" class="droptarget" ondrop="drop(event,'dragtarget')" ondragover="allowDrop(event)"></td>
+            <td id="a2" class="droptarget" ondrop="drop(event,'dragtarget1')" ondragover="allowDrop(event)"></td>
+        </tr>
+        <tr>
+            <td id="a3" class="droptarget" ondrop="drop(event,'dragtarget3')" ondragover="allowDrop(event)"></td>
+            <td id="a4" class="droptarget" ondrop="drop(event,'dragtarget2')" ondragover="allowDrop(event)"></td>
+        </tr>
+    </table>
+    <div  id="img">
+    <img src="1.jpg" ondragstart="dragStart(event)" draggable="true" id="dragtarget" >
+    <img src="2.jpg" ondragstart="dragStart(event)" draggable="true" id="dragtarget1" >
+    <img src="3.jpg" ondragstart="dragStart(event)" draggable="true" id="dragtarget2"  >
+    <img src="4.jpg" ondragstart="dragStart(event)" draggable="true" id="dragtarget3"  >
+</div>
+    <div id="button">
+   <button onclick="window.location = 'index.html'">Restart Game</button>
+</div>
+   <div id="tag">Created by Laurentius Gusti Ontoseno Panata Yudha (2172028) &#169;2021</div>
+ 
+
+</body>
+</html>
